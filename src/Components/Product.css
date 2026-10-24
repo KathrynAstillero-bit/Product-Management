@@ -1,0 +1,336 @@
+.catalog-grid .food-card {
+  --card-order: 0;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
+  padding-top: 240px;
+  border: 1px solid #e6c99726;
+  border-radius: 28px;
+  background: radial-gradient(
+    ellipse at 55% 10%,
+    #6c4826,
+    #2a2017 58%,
+    #141414
+  );
+  box-shadow: 0 14px 32px #0002;
+  cursor: pointer;
+}
+
+.food-card .food-image-wrap {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.food-card .food-image-wrap::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #12100d00 10%,
+    #18130d10 28%,
+    #17130fbd 53%,
+    #17130ff0 75%,
+    #141312 100%
+  );
+  pointer-events: none;
+  content: "";
+}
+
+.food-card .food-card-photo {
+  position: absolute;
+  top: -6%;
+  left: 50%;
+  width: 128%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  transition: transform 500ms ease;
+}
+
+.food-card .food-image {
+  position: absolute;
+  max-width: none;
+  object-fit: contain;
+  transform: none;
+}
+
+.food-card:hover .food-image {
+  transform: none;
+}
+
+.food-card:hover .food-card-photo {
+  transform: translateX(-50%) scale(1.025);
+}
+
+.food-card .image-placeholder {
+  height: 48%;
+  color: #e8d1ad;
+}
+
+.food-card .food-card-top {
+  position: absolute;
+  z-index: 4;
+  top: 18px;
+  right: 18px;
+  left: 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.food-card .food-card-flags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+
+.food-card .rating,
+.food-card .stock-badge {
+  position: static;
+  padding: 7px 9px;
+  border-radius: 20px;
+  background: #231b12b8;
+  color: #fff0cd;
+  font-size: 11px;
+  backdrop-filter: blur(12px);
+}
+
+.food-card .stock-badge {
+  background: #874b27dc;
+}
+
+.food-card .sold-out-badge {
+  background: #8b3030;
+  color: #fff;
+}
+
+.food-card .product-menu {
+  position: relative;
+  top: auto;
+  right: auto;
+  flex: none;
+}
+
+.food-card .product-menu summary {
+  width: 34px;
+  height: 34px;
+  border-color: #ffffff30;
+  background: #241b12a6;
+}
+
+.food-card .product-menu-options {
+  top: 41px;
+}
+
+.food-card .food-card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px;
+  color: #fff;
+}
+
+.food-card .food-title-row {
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.food-card .food-title-row h3 {
+  min-width: 0;
+  flex: 1;
+  color: #fff;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.food-card .food-price-pill {
+  flex: none;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #423017b8;
+  color: #fff4d6;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.food-card .food-description {
+  min-height: 0;
+  margin: 11px 0 13px;
+  color: #e6ded3;
+  font-size: 13px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.food-card .food-card-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+
+.food-card .cuisine-label,
+.food-card .food-stock-pill {
+  position: static;
+  padding: 5px 9px;
+  border: 0;
+  border-radius: 20px;
+  background: #d7ac5b24;
+  color: #f2e4ca;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.food-card .stock-subtotal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 5px 12px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #ffffff20;
+  color: #d6c8b4;
+  font-size: 12px;
+}
+
+.food-card .stock-subtotal strong {
+  color: #fff3dc;
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.food-card .food-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  padding: 0;
+  border: 0;
+}
+
+.food-card .add-button,
+.food-card .quantity-control {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 26px;
+  background: linear-gradient(110deg, #e1ba71, #b67b31);
+  color: #19140c;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.food-card .add-button {
+  width: 46px;
+  min-width: 46px;
+  flex: none;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(110deg, #e1ba71, #b67b31);
+  color: #19140c;
+  transition:
+    width 320ms cubic-bezier(0.22, 0.8, 0.25, 1),
+    filter 180ms ease;
+}
+
+.food-card .add-button-icon {
+  display: grid;
+  flex: 0 0 46px;
+  height: 46px;
+  place-items: center;
+}
+
+.food-card .add-button-label {
+  flex: none;
+  opacity: 0;
+  white-space: nowrap;
+  transform: translateX(-5px);
+  transition:
+    opacity 180ms ease,
+    transform 260ms ease;
+}
+
+.food-card .add-button:focus-visible:not(:disabled) {
+  width: 154px;
+}
+
+.food-card .add-button:focus-visible .add-button-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.food-card .add-button:disabled {
+  width: 114px;
+  justify-content: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .food-card .add-button:hover:not(:disabled) {
+    width: 154px;
+    filter: brightness(1.06);
+  }
+  .food-card .add-button:hover .add-button-label {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.food-card .quantity-control {
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 8px;
+}
+
+.food-card .quantity-control button {
+  width: 34px;
+  height: 34px;
+  flex: none;
+  background: #241b1210;
+  color: #332716;
+}
+
+.food-card:focus-within {
+  border-color: #ecc78b;
+}
+
+@media (max-width: 700px) {
+  .catalog-grid .food-card {
+    min-height: 540px;
+    padding-top: 220px;
+  }
+  .food-card .food-card-content {
+    padding: 20px;
+  }
+  .food-card .food-title-row h3 {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalog-grid .food-card,
+  .food-card .food-card-photo {
+    animation: none;
+    transition: none;
+  }
+  .food-card .add-button,
+  .food-card .add-button-label {
+    transition: none;
+  }
+}
